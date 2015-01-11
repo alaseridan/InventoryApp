@@ -1,0 +1,140 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/paperbg2"
+    android:orientation="vertical"
+    tools:context="com.example.database.DatabaseActivity$PlaceholderFragment" 
+    android:descendantFocusability="beforeDescendants"
+	android:focusableInTouchMode="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp" >
+
+        <ImageButton
+            android:id="@+id/AddNewButton"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:adjustViewBounds="true"
+            android:background="@drawable/button_selector"
+            android:onClick="newProduct"
+            android:scaleType="fitCenter"
+            android:src="@drawable/editbutton" />
+
+        <ImageButton
+            android:id="@+id/button_CancelBuy"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:adjustViewBounds="true"
+            android:background="@drawable/button_selector"
+            android:onClick="lookupProduct"
+            android:scaleType="fitCenter"
+            android:src="@drawable/searchbutton" />
+
+        <EditText
+            android:id="@+id/editText_findField"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:ems="10"
+            android:maxWidth="200dp"
+            android:width="100dp" >
+
+            <requestFocus />
+        </EditText>
+
+        <TextView
+            android:id="@+id/textView_historyChangeType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lableTableCount" />
+
+        <TextView
+            android:id="@+id/countText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:text="@string/tableCountText" />
+
+    </LinearLayout>
+    
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="fill_parent"
+        android:layout_height="30dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp" >
+ 
+    <TextView
+        android:id="@+id/FirstText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Item Name"
+        android:textSize="20sp" >
+
+    </TextView>
+     
+    <TextView
+        android:id="@+id/SecondText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="55dp"
+        android:layout_weight=".75"
+        android:text="Unit Type"
+        android:textSize="20sp" >
+
+    </TextView>
+     
+    <TextView
+        android:id="@+id/ThirdText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight=".3"
+        android:text="QOH"
+        android:textSize="20sp" >
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/FourthText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight=".5"
+        android:text="Low Level"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/FifthText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="130dp"
+        android:layout_weight=".75"
+        android:text="Preferred Stock"
+        android:textSize="20sp" />
+
+</LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@drawable/tab_bg_unselected" />
+
+    <ListView
+        android:id="@+id/listview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:listSelector="?android:attr/listChoiceBackgroundIndicator" >
+    	
+    </ListView>
+
+</LinearLayout>

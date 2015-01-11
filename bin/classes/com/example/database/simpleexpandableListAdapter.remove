@@ -1,0 +1,107 @@
+package com.example.database;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.zip.Inflater;
+
+import android.app.Activity;
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseExpandableListAdapter;
+
+public class simpleexpandableListAdapter extends BaseExpandableListAdapter{
+	
+	private Activity _context;
+	public List<String> _list;
+	
+	public simpleexpandableListAdapter(Activity context, List<String> list)
+	{
+		_context = context;
+		set_list(list);
+	}
+	
+	@Override
+	public int getGroupCount() {
+		// TODO Auto-generated method stub
+		return _list.size();
+	}
+
+	@Override
+	public int getChildrenCount(int groupPosition) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public Object getGroup(int groupPosition) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Object getChild(int groupPosition, int childPosition) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public long getGroupId(int groupPosition) {
+		// TODO Auto-generated method stub
+		return groupPosition;
+	}
+
+	@Override
+	public long getChildId(int groupPosition, int childPosition) {
+		// TODO Auto-generated method stub
+		return childPosition;
+	}
+
+	@Override
+	public boolean hasStableIds() {
+		// TODO Auto-generated method stub
+		return true;
+	}
+
+	@Override
+	public View getGroupView(int groupPosition, boolean isExpanded,
+			View convertView, ViewGroup parent) {
+		/*
+		LayoutInflater inflater = _context.getLayoutInflater();
+		if (convertView == null)
+		{
+			convertView = inflater.inflate(R.id.expandableListView_shoppingList, null);
+		}
+		*/
+		return convertView;
+	}
+
+	@Override
+	public View getChildView(int groupPosition, int childPosition,
+			boolean isLastChild, View convertView, ViewGroup parent) {
+		
+		LayoutInflater inflater = _context.getLayoutInflater();
+		if (convertView == null)
+		{
+			convertView = inflater.inflate(R.id.tobuyLayout, null);
+		}
+		return convertView;
+	}
+
+	@Override
+	public boolean isChildSelectable(int groupPosition, int childPosition) {
+		// TODO Auto-generated method stub
+		return true;
+	}
+
+	public List<String> get_list() {
+		return _list;
+	}
+
+	public void set_list(List<String> _list) {
+		this._list = _list;
+	}
+
+}

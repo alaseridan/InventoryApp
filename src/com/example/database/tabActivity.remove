@@ -1,0 +1,95 @@
+package com.example.database;
+
+import android.app.TabActivity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.widget.TabHost;
+import android.widget.TextView;
+
+public class tabActivity extends TabActivity {
+	
+private TabHost mTabHost;
+private TabHost.TabSpec shoppingListSpec;
+
+static tabActivity _instance;
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.tab_layout);
+		
+		_instance = this;
+		
+		mTabHost = getTabHost();
+		TabHost.TabSpec spec;
+		Intent intent;
+		
+		//inventory
+		intent = new Intent(this, DatabaseActivity.class);
+		spec = mTabHost.newTabSpec("Inventory")
+				.setIndicator("Inventory")
+				.setContent(intent);
+		mTabHost.addTab(spec);
+		
+		//shopping list
+				intent = new Intent(this, shoppingListActivity.class);
+				shoppingListSpec = mTabHost.newTabSpec("shopping list")
+						.setIndicator("Shopping List Items: " + getCount())
+						.setContent(intent);
+						
+				mTabHost.addTab(shoppingListSpec);
+				
+	}
+	
+	public String getCount()
+	{
+		//shoppingDBHandler dbHandler = new shoppingDBHandler(this, null, null, 1);
+		
+		shoppingListBackend shopListManager = new shoppingListBackend();
+		int count = shopListManager.getCount(this);
+        
+        String theCount = String.valueOf(count);
+        return theCount;
+        
+	}
+	
+	public void updateTab()
+	{
+		mTabHost = getTabHost();
+		mTabHost.clearAllTabs();
+		TabHost.TabSpec spec;
+		Intent intent;
+		
+		//inventory
+		intent = new Intent(this, DatabaseActivity.class);
+		spec = mTabHost.newTabSpec("Inventory")
+				.setIndicator("Inventory")
+				.setContent(intent);
+		mTabHost.addTab(spec);
+		
+		//shopping list
+				intent = new Intent(this, shoppingListActivity.class);
+				shoppingListSpec = mTabHost.newTabSpec("shopping list")
+						.setIndicator("Shopping List Items: " + getCount())
+						.setContent(intent);
+						
+				mTabHost.addTab(shoppingListSpec);
+				
+				
+		
+				
+	}
+	
+	static public void updateTabCount()
+	{
+		
+		if (_instance != null)
+		{
+			System.out.println("tabs really suck");
+			//_instance.updateTab();
+		}
+		
+		
+	}
+
+}

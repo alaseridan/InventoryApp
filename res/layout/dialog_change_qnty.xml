@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="140dp"
+    android:background="@drawable/paperbg2"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp" >
+
+        <ImageButton
+            android:id="@+id/button_PromptchangeQntyLess"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:adjustViewBounds="true"
+            android:background="@drawable/button_selector"
+            android:scaleType="fitCenter"
+            android:src="@drawable/minusbutton" />
+
+        <EditText
+            android:id="@+id/editText_promptChangeQnty_newQnty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="numberDecimal" >
+
+            <requestFocus />
+        </EditText>
+
+        <ImageButton
+            android:id="@+id/button_PromptchangeQntyMore"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:adjustViewBounds="true"
+            android:background="@drawable/button_selector"
+            android:scaleType="fitCenter"
+            android:src="@drawable/plusbutton" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:gravity="center" >
+
+        <ImageButton
+            android:id="@+id/button_promptChangeQnty_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:adjustViewBounds="true"
+            android:background="@drawable/button_selector"
+            android:scaleType="fitCenter"
+            android:src="@drawable/okbutton" />
+
+        <ImageButton
+            android:id="@+id/button_promptChangeQnty_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:background="@drawable/button_selector"
+            android:scaleType="fitCenter"
+            android:src="@drawable/nobutton" />
+
+    </LinearLayout>
+
+</LinearLayout>

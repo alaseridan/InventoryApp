@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tobuyLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+ 
+    <TextView
+        android:id="@+id/text_tobuyName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_weight="1.60"
+        android:text="First"
+        android:textSize="20sp" >
+
+    </TextView>
+     
+    <TextView
+        android:id="@+id/text_tobuyUOM"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_weight="1.18"
+        android:text="Second"
+        android:textSize="20sp" >
+
+    </TextView>
+     
+    <TextView
+        android:id="@+id/text_tobuyQnty"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="5dp"
+        android:layout_weight=".5"
+        android:text="Third"
+        android:textSize="20sp" >
+
+    </TextView>
+
+    <ImageButton
+        android:id="@+id/button_tobuyBought"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/button_selector"
+        android:onClick="buyButton"
+        android:scaleType="fitCenter"
+        android:src="@drawable/cartbutton" />
+
+</LinearLayout>
